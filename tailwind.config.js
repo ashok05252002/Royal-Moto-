@@ -1,13 +1,13 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "/src/**/*.{html,js,ts,jsx,tsx}",
+    './dashboard.html', // Add this line if index.html is at the root
+    './**/*.{js,ts,jsx,tsx,html}'
   ],
   theme: {
     extend: {
       colors: {
-        'primary': '#ff77e9',     
-       
+        primary : '#ff77e9',     
       },
     },
   },
