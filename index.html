@@ -8,10 +8,10 @@
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.15/dist/tailwind.min.css" rel="stylesheet" />
   <style>  @import './tailwind.config.js'; </style>
 </head>
-<body class="bg-gray-100">
+<body class="bg-gray-200">
 
-    <!-- Top Bar Section -->
-<nav class="bg-black text-white py-6 fixed top-0 left-0 right-0 z-50">
+    <!-- Top Nav Bar Section -->
+<nav class="bg-black text-white py-7 fixed top-0 left-0 right-0 z-50">
   <div class="container mx-auto flex justify-between items-center">
     <a href="#" class="text-3xl font-semibold pl-10 ">Royal Moto</a>
     <div class=" relative ">
@@ -36,79 +36,110 @@
       </button>
   </div>
 </nav>
-    <!-- Top Bar Section Ends -->
+    <!-- Top Nav Bar Section Ends -->
     
-<div class="pt-28 pl-4"> <!--Base div for manageing nav bar --> 
+<div class="pt-28  "> <!--Base div for manageing nav bar --> 
       <!-- Top Image transition -->
   <div class="slider-container h-96 relative overflow-hidden">
-    <img src="assets/image1.png" class="absolute w-full h-full object-cover ease-in-out duration-300 opacity-100" alt="Slide 1">
-    <img src="assets/image2.png" class="absolute w-full h-full object-cover ease-in-out duration-300 opacity-0" alt="Slide 2">
-    <img src="assets/image3.png" class="absolute w-full h-full object-cover ease-in-out duration-300 opacity-0" alt="Slide 3">
+    <img src="assets/banner.png" class="absolute w-full h-full object-cover ease-in-out duration-300 opacity-100" alt="Slide 1">
+    <img src="assets/banner2.png" class="absolute w-full h-full object-cover ease-in-out duration-300 opacity-0" alt="Slide 2">
+    <img src="assets/banner3.png" class="absolute w-full h-full object-cover ease-in-out duration-300 opacity-0" alt="Slide 3">
   </div>
     <!-- Top Image transition Ends -->
 
 
         <!-- Top Brand list starts -->
-    <div class="relative py-4">
+    <div class="relative py-4  rounded-lg " style="margin-top: 20px;">
       <!-- Left Arrow Button -->
-      <button id="scrollLeft" class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-blue-500 text-white p-2 rounded-full">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4 transform rotate-180">
-          <path fill-rule="evenodd" d="M2 8c0 .414.336.75.75.75h8.69l-1.22 1.22a.75.75 0 1 0 1.06 1.06l2.5-2.5a.75.75 0 0 0 0-1.06l-2.5-2.5a.75.75 0 1 0-1.06 1.06l1.22 1.22H2.75A.75.75 0 0 0 2 8Z" clip-rule="evenodd" />
+      <button id="scrollLeft" class="absolute top-1/2 left-2 pl-12 transform -translate-y-1/2  text-black rounded-full">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-10 h-10 transform rotate-180  transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-lg hover:text-white hover:bg-gray-600 rounded-full">
+          <path fill-rule="evenodd" d="M16.28 11.47a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 0 1-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 0 1 1.06-1.06l7.5 7.5Z" clip-rule="evenodd" />
         </svg>
       </button>
-  
-      <div class="flex overflow-x-hidden scrollbar-hide space-x-12 p-4">
+  <section class="px-32">
+      <div class="flex overflow-x-hidden scrollbar-hide space-x-14 p-4">
         <!-- Product Card 1 -->
-        <div class="pl-8">
-        <div herf="" class="flex-none w-60 h-60 bg-gray-200 flex flex-col items-center justify-center p-2 rounded-lg shadow-md transform transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-lg ">
-          <img src="assets/Honda.png" alt="Product Image" class="w-full h-auto object-cover">
-          <p class="mt-2 text-center text-sm">Product 1</p>
+        <div herf="" class="flex-none w-48 h-48 bg-white flex flex-col items-center justify-center p-2 rounded-lg shadow-md transform transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-lg ">
+          <img src="assets/Honda.png" alt="Product Image" class="object-cover h-28 w-auto ">
         </div>
-      </div>
         <!-- Repeat for more products -->
-        <div class="flex-none w-60 h-60 bg-gray-200 flex flex-col items-center justify-center p-2 rounded-lg shadow-md transform transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-lg ">
-          <div class="w-24 h-24 bg-blue-500"></div>
-          <p class="mt-2 text-center text-sm">Product 2</p>
+        <div class="flex-none w-48 h-48 bg-white flex flex-col items-center justify-center p-2 rounded-lg shadow-md transform transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-lg ">
+          <img src="assets/re.png" alt="Product Image" class=" object-cover h-32 w-32">
         </div>
-        <div class="flex-none w-60 h-60 bg-gray-200 flex flex-col items-center justify-center p-2 rounded-lg shadow-md transform transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-lg ">
-          <div class="w-24 h-24 bg-blue-500"></div>
-          <p class="mt-2 text-center text-sm">Product 3</p>
+        <div class="flex-none w-48 h-48 bg-white flex flex-col items-center justify-center p-2 rounded-lg shadow-md transform transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-lg ">
+          <img src="assets/ktm.png" alt="Product Image" class=" object-cover h-auto w-auto">
         </div>
-        <div class="flex-none w-60 h-60 bg-gray-200 flex flex-col items-center justify-center p-2 rounded-lg shadow-md transform transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-lg ">
-          <div class="w-24 h-24 bg-blue-500"></div>
-          <p class="mt-2 text-center text-sm">Product 3</p>
+        <div class="flex-none w-48 h-48 bg-white flex flex-col items-center justify-center p-2 rounded-lg shadow-md transform transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-lg ">
+          <img src="assets/tvs.png" alt="Product Image" class=" object-cover h-40 w-40">
+          <!-- <p class="mt-2 text-center text-sm">Product 3</p> -->
         </div>
-        <div class="flex-none w-60 h-60 bg-gray-200 flex flex-col items-center justify-center p-2 rounded-lg shadow-md transform transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-lg ">
-          <div class="w-24 h-24 bg-blue-500"></div>
-          <p class="mt-2 text-center text-sm">Product 3</p>
+        <div class="flex-none w-48 h-48 bg-white flex flex-col items-center justify-center p-2 rounded-lg shadow-md transform transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-lg ">
+          <img src="assets/bajaj.png" alt="Product Image" class=" object-cover h-auto w-auto">
         </div>
-        <div class="flex-none w-60 h-60 bg-gray-200 flex flex-col items-center justify-center p-2 rounded-lg shadow-md transform transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-lg ">
-          <div class="w-24 h-24 bg-blue-500"></div>
-          <p class="mt-2 text-center text-sm">Product 3</p>
+        <div class="flex-none w-48 h-48 bg-white flex flex-col items-center justify-center p-2 rounded-lg shadow-md transform transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-lg ">
+          <img src="assets/hero.png" alt="Product Image" class=" object-cover h-28 w-28">
         </div>
-        <div class="flex-none w-60 h-60 bg-gray-200 flex flex-col items-center justify-center p-2 rounded-lg shadow-md transform transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-lg ">
-          <div class="w-24 h-24 bg-blue-500"></div>
-          <p class="mt-2 text-center text-sm">Product 3</p>
+        <div class="flex-none w-48 h-48 bg-white flex flex-col items-center justify-center p-2 rounded-lg shadow-md transform transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-lg ">
+          <img src="assets/suzuki.png" alt="Product Image" class=" object-cover h-28 w-auto">
         </div>
-        <div class="flex-none w-60 h-60 bg-gray-200 flex flex-col items-center justify-center p-2 rounded-lg shadow-md transform transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-lg ">
-          <div class="w-24 h-24 bg-blue-500"></div>
-          <p class="mt-2 text-center text-sm">Product 3</p>
+        <div class="flex-none w-48 h-48 bg-white flex flex-col items-center justify-center p-2 rounded-lg shadow-md transform transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-lg ">
+          <img src="assets/yamaha.png" alt="Product Image" class=" object-cover h-28 w-auto">
         </div>
-        <div class="flex-none w-60 h-60 bg-gray-200 flex flex-col items-center justify-center p-2 rounded-lg shadow-md transform transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-lg ">
-          <div class="w-24 h-24 bg-blue-500"></div>
-          <p class="mt-2 text-center text-sm">Product 3</p>
+        <div class="flex-none w-48 h-48 bg-white flex flex-col items-center justify-center p-2 rounded-lg shadow-md transform transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-lg ">
+          <img src="assets/mahindra.png" alt="Product Image" class=" object-cover h-auto w-auto">
+        </div>
+        <div class="flex-none w-48 h-48 bg-white flex flex-col items-center justify-center p-2 rounded-lg shadow-md transform transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-lg ">
+          <img src="assets/kawasaki.png" alt="Product Image" class=" object-cover h-26 w-auto">
         </div>
         <!-- Add more products as needed -->
       </div>
-  
+    </section>
       <!-- Right Arrow Button -->
-      <button id="scrollRight" class="absolute top-1/2 right-2 transform -translate-y-1/2 bg-blue-500 text-white p-2 rounded-full">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4">
-          <path fill-rule="evenodd" d="M2 8c0 .414.336.75.75.75h8.69l-1.22 1.22a.75.75 0 1 0 1.06 1.06l2.5-2.5a.75.75 0 0 0 0-1.06l-2.5-2.5a.75.75 0 1 0-1.06 1.06l1.22 1.22H2.75A.75.75 0 0 0 2 8Z" clip-rule="evenodd" />
+      <button id="scrollRight" class="absolute top-1/2 right-2 pr-12 transform -translate-y-1/2 text-black p-2 rounded-full">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-10 h-10 transform rotate-180  transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-lg hover:text-white hover:bg-gray-600 rounded-full">
+          <path fill-rule="evenodd" d="M7.72 12.53a.75.75 0 0 1 0-1.06l7.5-7.5a.75.75 0 1 1 1.06 1.06L9.31 12l6.97 6.97a.75.75 0 1 1-1.06 1.06l-7.5-7.5Z" clip-rule="evenodd" />
         </svg>
       </button>
     </div>
-        <!-- Top Brand list starts Ends -->
+        <!-- Top Brand list  Ends -->  
+        
+        <!-- Top Break and clutch  starts -->
+        <div class="relative py-4  rounded-lg " style="margin-top: 20px;">
+          <!-- Left Arrow Button -->
+      <section class="px-32">
+          <div class="flex overflow-x-hidden scrollbar-hide space-x-14 p-4">
+            <!-- Product Card 1 -->
+            <div herf="" class="flex-none w-48 h-48 bg-white flex flex-col items-center justify-center p-2 rounded-full shadow-md transform transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-lg border-2   hover:bg-gray-400">
+              <img src="assets/breakdisc.png" alt="Product Image" class="object-cover h-32 w-auto ">
+            </div>
+            <!-- Repeat for more products -->
+            <div class="flex-none w-48 h-48 bg-white flex flex-col items-center justify-center p-2 rounded-full shadow-md transform transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-lg border-2   hover:bg-gray-400">
+              <img src="assets/breakmaster.png" alt="Product Image" class=" object-cover h-32 w-auto">
+            </div>
+            <div class="flex-none w-48 h-48 bg-white flex flex-col items-center justify-center p-2 rounded-full shadow-md transform transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-lg border-2   hover:bg-gray-400">
+              <img src="assets/discbreak.png" alt="Product Image" class=" object-cover h-32 w-auto">
+            </div>
+            <div class="flex-none w-48 h-48 bg-white flex flex-col items-center justify-center p-2 rounded-full shadow-md transform transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-lg border-2   hover:bg-gray-400">
+              <img src="assets/breakdrum.png" alt="Product Image" class=" object-cover h-28 w-40 rounded-full">
+              <!-- <p class="mt-2 text-center text-sm">Product 3</p> -->
+            </div>
+            <div class="flex-none w-48 h-48 bg-white flex flex-col items-center justify-center p-2 rounded-full shadow-md transform transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-lg border-2   hover:bg-gray-400">
+              <img src="assets/clutchplates.png" alt="Product Image" class=" object-cover h-32 w-auto">
+            </div>
+            <div class="flex-none w-48 h-48 bg-white flex flex-col items-center justify-center p-2 rounded-full shadow-md transform transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-lg border-2   hover:bg-gray-400">
+              <img src="assets/onewayclutch.png" alt="Product Image" class=" object-cover h-28 w-28">
+            </div>
+            <div class="flex-none w-48 h-48 bg-white flex flex-col items-center justify-center p-2 rounded-full shadow-md transform transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-lg border-2   hover:bg-gray-400">
+              <img src="assets/clutchassembly.png" alt="Product Image" class=" object-cover h-28 w-auto">
+            </div>
+            
+            <!-- Add more products as needed -->
+          </div>
+        </section>
+          <!-- Right Arrow Button -->
+         
+        </div>
+                <!-- Top break and clutch starts -->
 </div>
 <!-- Footer container -->
 <div class="pt-80">
@@ -220,11 +251,11 @@ const scrollLeftButton = document.getElementById('scrollLeft');//scroll for the 
     const scrollContainer = document.querySelector('.overflow-x-hidden');
 
     scrollLeftButton.addEventListener('click', () => {
-      scrollContainer.scrollBy({ left: -900, behavior: 'smooth' });
+      scrollContainer.scrollBy({ left: -1400, behavior: 'smooth' });
     });
 
     scrollRightButton.addEventListener('click', () => {
-      scrollContainer.scrollBy({ left: 900, behavior: 'smooth' });
+      scrollContainer.scrollBy({ left: 1400, behavior: 'smooth' });
     });
 </script>
 </body>
