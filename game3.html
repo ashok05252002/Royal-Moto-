@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flappy Bird Clone</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #70c5ce;
+            margin: 0;
+        }
+
+        .game-container {
+            position: relative;
+            width: 400px;
+            height: 600px;
+            border: 2px solid #000;
+            overflow: hidden;
+            background-color: #70c5ce;
+        }
+
+        #bird {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            background-color: yellow;
+            border-radius: 50%;
+            top: 50%;
+            left: 20px;
+        }
+
+        .pipe {
+            position: absolute;
+            width: 60px;
+            background-color: green;
+        }
+
+        .pipe.top {
+            height: 200px;
+            top: 0;
+        }
+
+        .pipe.bottom {
+            height: 200px;
+            bottom: 0;
+        }
+
+        #score {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 20px;
+            font-family: Arial, sans-serif;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="game-container">
+        <div id="bird"></div>
+        <div id="score">Score: 0</div>
+    </div>
+    <script>
+        const bird = document.getElementById('bird');
+        const gameContainer = document.querySelector('.game-container');
+        const scoreDisplay = document.getElementById('score');
+        let birdTop = parseInt(window.getComputedStyle(bird).top);
+        let gravity = 2;
+        let isGameOver = false;
+        let score = 0;
+        let pipes = [];
+
+        document.addEventListener('keydown', function(event) {
+            if (event.key === ' ') {
+                jump();
+            } else if (isGameOver && event.key === ' ') {
+                restartGame();
+            }
+        });
+
+        function jump() {
+            birdTop -= 50;
+            if (birdTop < 0) {
+                birdTop = 0;
+            }
+            bird.style.top = birdTop + 'px';
+        }
+
+        function moveBird() {
+            birdTop += gravity;
+            if (birdTop > gameContainer.clientHeight - bird.clientHeight) {
+                birdTop = gameContainer.clientHeight - bird.clientHeight;
+            }
+            bird.style.top = birdTop + 'px';
+        }
+
+        function createPipe() {
+            let pipeHeight = Math.floor(Math.random() * 200) + 100;
+            let pipeTop = document.createElement('div');
+            pipeTop.classList.add('pipe', 'top');
+            pipeTop.style.height = pipeHeight + 'px';
+            pipeTop.style.left = '400px';
+            gameContainer.appendChild(pipeTop);
+
+            let pipeBottom = document.createElement('div');
+            pipeBottom.classList.add('pipe', 'bottom');
+            pipeBottom.style.height = gameContainer.clientHeight - pipeHeight - 150 + 'px';
+            pipeBottom.style.left = '400px';
+            gameContainer.appendChild(pipeBottom);
+
+            pipes.push({ top: pipeTop, bottom: pipeBottom });
+        }
+
+        function movePipes() {
+            pipes.forEach(pipe => {
+                let pipeLeft = parseInt(window.getComputedStyle(pipe.top).left);
+                if (pipeLeft <= -60) {
+                    pipe.top.remove();
+                    pipe.bottom.remove();
+                    pipes.shift();
+                    score++;
+                } else {
+                    pipe.top.style.left = pipeLeft - 2 + 'px';
+                    pipe.bottom.style.left = pipeLeft - 2 + 'px';
+                }
+
+                if (
+                    (pipeLeft < 60 && pipeLeft > 20 &&
+                    (birdTop < parseInt(pipe.top.style.height) || birdTop > gameContainer.clientHeight - parseInt(pipe.bottom.style.height) - bird.clientHeight)) ||
+                    birdTop >= gameContainer.clientHeight - bird.clientHeight
+                ) {
+                    gameOver();
+                }
+            });
+        }
+
+        function gameOver() {
+            isGameOver = true;
+            clearInterval(pipeInterval);
+            clearInterval(gameInterval);
+            alert('Game Over! Press Space to Restart.');
+        }
+
+        function restartGame() {
+            isGameOver = false;
+            birdTop = 50;
+            bird.style.top = birdTop + 'px';
+            pipes.forEach(pipe => {
+                pipe.top.remove();
+                pipe.bottom.remove();
+            });
+            pipes = [];
+            score = 0;
+            scoreDisplay.textContent = 'Score: 0';
+            startGame();
+        }
+
+        function startGame() {
+            pipeInterval = setInterval(createPipe, 3000);
+            gameInterval = setInterval(() => {
+                moveBird();
+                movePipes();
+                scoreDisplay.textContent = 'Score: ' + score;
+            }, 20);
+        }
+
+        let pipeInterval = setInterval(createPipe, 3000);
+        let gameInterval = setInterval(() => {
+            moveBird();
+            movePipes();
+            scoreDisplay.textContent = 'Score: ' + score;
+        }, 20);
+    </script>
+</body>
+</html>

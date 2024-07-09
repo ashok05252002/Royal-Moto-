@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dino Runner</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+
+        .game-container {
+            position: relative;
+            width: 600px;
+            height: 200px;
+            border: 2px solid #333;
+            overflow: hidden;
+            background-color: #fff;
+        }
+
+        #dino {
+            position: absolute;
+            bottom: 0;
+            left: 50px;
+            width: 40px;
+            height: 40px;
+            background-color: #333;
+        }
+
+        #cactus {
+            position: absolute;
+            bottom: 0;
+            right: -50px;
+            width: 20px;
+            height: 40px;
+            background-color: #333;
+        }
+
+        #score {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 20px;
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="game-container">
+        <div id="dino"></div>
+        <div id="cactus"></div>
+        <div id="score">Score: 0</div>
+    </div>
+    <script>
+        const dino = document.getElementById('dino');
+        const cactus = document.getElementById('cactus');
+        const scoreDisplay = document.getElementById('score');
+        let isJumping = false;
+        let score = 0;
+        let speed = 5;
+        let isGameOver = false;
+
+        // Initialize dino's bottom position
+        dino.style.bottom = '0px';
+
+        document.addEventListener('keydown', function(event) {
+            if (event.key === ' ' && !isJumping && !isGameOver) {
+                jump();
+            } else if (event.key === ' ' && isGameOver) {
+                restartGame();
+            }
+        });
+
+        function jump() {
+            isJumping = true;
+            let jumpHeight = 150;
+            let jumpSpeed = 10; // Increased jump speed
+            let upInterval = setInterval(() => {
+                if (parseInt(dino.style.bottom) >= jumpHeight) {
+                    clearInterval(upInterval);
+                    let downInterval = setInterval(() => {
+                        if (parseInt(dino.style.bottom) <= 0) {
+                            clearInterval(downInterval);
+                            isJumping = false;
+                        } else {
+                            dino.style.bottom = parseInt(dino.style.bottom) - jumpSpeed + 'px';
+                        }
+                    }, 20);
+                } else {
+                    dino.style.bottom = parseInt(dino.style.bottom) + jumpSpeed + 'px';
+                }
+            }, 20);
+        }
+
+        function moveCactus() {
+            let cactusInterval = setInterval(() => {
+                if (isGameOver) {
+                    clearInterval(cactusInterval);
+                    return;
+                }
+                let cactusLeft = parseInt(window.getComputedStyle(cactus).left);
+                if (cactusLeft <= -20) {
+                    cactus.style.left = '600px';
+                    score++;
+                    speed += 0.5; // Increase speed
+                } else {
+                    cactus.style.left = cactusLeft - speed + 'px';
+                }
+
+                // Check for collision
+                let dinoBottom = parseInt(window.getComputedStyle(dino).bottom);
+                if (cactusLeft > 30 && cactusLeft < 90 && dinoBottom <= 40) {
+                    isGameOver = true;
+                    alert('Game Over! Press Space to Restart.');
+                }
+
+                // Update score
+                scoreDisplay.textContent = 'Score: ' + score;
+            }, 20);
+        }
+
+        function restartGame() {
+            isGameOver = false;
+            score = 0;
+            speed = 5;
+            cactus.style.left = '600px';
+            moveCactus();
+        }
+
+        moveCactus();
+    </script>
+</body>
+</html>
