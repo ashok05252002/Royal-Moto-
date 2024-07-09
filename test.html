@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Royal Moto</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.15/dist/tailwind.min.css" rel="stylesheet" />
+</head>
+<body class="bg-gray-200">
+
+    <!-- Top Nav Bar Section -->
+<nav class="bg-black text-white py-7 fixed top-0 left-0 right-0 z-50">
+  <div class="container mx-auto flex justify-between items-center">
+    <a href="#" class="text-3xl font-semibold pl-10 ">Royal Moto</a>
+    <div class=" relative ">
+      <input type="text" placeholder="Search..."
+        class="inline-block pl-16 pr-80 py-2 rounded-full bg-gray-800 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor"
+        width="24" height="24" class="absolute left-4 top-3">
+        <path strokeLinecap="round" strokeLinejoin="round"
+          d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+      </svg>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-1 gap-2">
+      <a href="#" class="font-light text-1xl">Login / Signup</a>
+      <a href="#" class="font-bold text-1xl">My Account</a>
+    </div>
+      <button onclick="window.location.href='#'" class="pr-10">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+          width="40" height="40" class="size-6">
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+        </svg>
+      </button>
+  </div>
+</nav>
+    <!-- Top Nav Bar Section Ends -->
+    
+<div class="pt-28"> <!--Base div for managing nav bar --> 
+      <!-- Top Image transition -->
+  <div class="slider-container h-96 relative overflow-hidden">
+    <img src="assets/banner.png" class="absolute w-full h-full object-cover ease-in-out duration-300 opacity-100" alt="Banner 1">
+    <img src="assets/banner2.png" class="absolute w-full h-full object-cover ease-in-out duration-300 opacity-0" alt="Banner 2">
+    <img src="assets/banner3.png" class="absolute w-full h-full object-cover ease-in-out duration-300 opacity-0" alt="Banner 3">
+  </div>
+    <!-- Top Image transition Ends -->
+
+        <!-- Top Brand list starts -->
+    <div class="relative py-4 rounded-lg" style="margin-top: 20px;">
+      <!-- Left Arrow Button -->
+      <button id="scrollLeft" class="absolute top-1/2 left-2 transform -translate-y-1/2 text-black rounded-full">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-10 h-10 transform rotate-180 transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-lg hover:text-white hover:bg-gray-600 rounded-full">
+          <path fill-rule="evenodd" d="M16.28 11.47a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 0 1-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 0 1 1.06-1.06l7.5 7.5Z" clip-rule="evenodd" />
+        </svg>
+      </button>
+  <section class="px-32">
+      <div class="flex overflow-x-hidden scrollbar-hide space-x-8 p-4">
+        <!-- Product Card 1 -->
+        <div href="#" class="flex-none w-44 h-44 bg-white flex flex-col items-center justify-center p-2 rounded-lg shadow-md transform transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-lg">
+          <img src="assets/Honda.png" alt="Honda Logo" class="object-cover h-28 w-auto">
+        </div>
+        <!-- Repeat for more products -->
+        <div href="#" class="flex-none w-44 h-44 bg-white flex flex-col items-center justify-center p-2 rounded-lg shadow-md transform transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-lg">
+          <img src="assets/re.png" alt="Royal Enfield Logo" class="object-cover h-32 w-32">
+        </div>
+        <div href="#" class="flex-none w-44 h-44 bg-white flex flex-col items-center justify-center p-2 rounded-lg shadow-md transform transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-lg">
+          <img src="assets/ktm.png" alt="KTM Logo" class="object-cover h-auto w-auto">
+        </div>
+        <div href="#" class="flex-none w-44 h-44 bg-white flex flex-col items-center justify-center p-2 rounded-lg shadow-md transform transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-lg">
+          <img src="assets/tvs.png" alt="TVS Logo" class="object-cover h-40 w-40">
+        </div>
+        <div href="#" class="flex-none w-44 h-44 bg-white flex flex-col items-center justify-center p-2 rounded-lg shadow-md transform transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-lg">
+          <img src="assets/bajaj.png" alt="Bajaj Logo" class="object-cover h-auto w-auto">
+        </div>
+        <div href="#" class="flex-none w-44 h-44 bg-white flex flex-col items-center justify-center p-2 rounded-lg shadow-md transform transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-lg">
+          <img src="assets/hero.png" alt="Hero Logo" class="object-cover h-28 w-28">
+        </div>
+        <div href="#" class="flex-none w-44 h-44 bg-white flex flex-col items-center justify-center p-2 rounded-lg shadow-md transform transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-lg">
+          <img src="assets/suzuki.png" alt="Suzuki Logo" class="object-cover h-28 w-auto">
+        </div>
+        <div href="#" class="flex-none w-44 h-44 bg-white flex flex-col items-center justify-center p-2 rounded-lg shadow-md transform transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-lg">
+          <img src="assets/yamaha.png" alt="Yamaha Logo" class="object-cover h-28 w-auto">
+        </div>
+        <div href="#" class="flex-none w-44 h-44 bg-white flex flex-col items-center justify-center p-2 rounded-lg shadow-md transform transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-lg">
+          <img src="assets/triumph.png" alt="Triumph Logo" class="object-cover h-28 w-auto">
+        </div>
+        <div href="#" class="flex-none w-44 h-44 bg-white flex flex-col items-center justify-center p-2 rounded-lg shadow-md transform transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-lg">
+          <img src="assets/bmw.png" alt="BMW Logo" class="object-cover h-28 w-auto">
+        </div>
+        <div href="#" class="flex-none w-44 h-44 bg-white flex flex-col items-center justify-center p-2 rounded-lg shadow-md transform transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-lg">
+          <img src="assets/ducati.png" alt="Ducati Logo" class="object-cover h-28 w-auto">
+        </div>
+      </div>
+  </section>
+      <!-- Right Arrow Button -->
+      <button id="scrollRight" class="absolute top-1/2 right-2 transform -translate-y-1/2 text-black rounded-full">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-10 h-10 transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-lg hover:text-white hover:bg-gray-600 rounded-full">
+          <path fill-rule="evenodd" d="M16.28 11.47a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 0 1-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 0 1 1.06-1.06l7.5 7.5Z" clip-rule="evenodd" />
+        </svg>
+      </button>
+    </div>
+  <!-- Top Brand list Ends -->
+
+      <!-- Best Sellers Section Starts -->
+    <div class="relative py-4 rounded-lg" style="margin-top: 20px;">
+      <!-- Left Arrow Button -->
+      <button id="scrollLeft2" class="absolute top-1/2 left-2 transform -translate-y-1/2 text-black rounded-full">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-10 h-10 transform rotate-180 transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-lg hover:text-white hover:bg-gray-600 rounded-full">
+          <path fill-rule="evenodd" d="M16.28 11.47a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 0 1-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 0 1 1.06-1.06l7.5 7.5Z" clip-rule="evenodd" />
+        </svg>
+      </button>
+  <section class="px-32">
+      <div class="flex overflow-x-hidden scrollbar-hide space-x-8 p-4">
+        <!-- Best Seller 1 -->
+        <div href="#" class="flex-none w-80 h-64 bg-white flex flex-col items-center justify-center p-2 rounded-lg shadow-md transform transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-lg">
+          <img src="assets/breakdisc.png" alt="Helmet" class="object-cover h-40 w-auto">
+          <h2 class="text-lg font-semibold mt-2">Best Seller Product 1</h2>
+          <p class="text-gray-600">$499.99</p>
+        </div>
+        <!-- Repeat for more products -->
+        <div href="#" class="flex-none w-80 h-64 bg-white flex flex-col items-center justify-center p-2 rounded-lg shadow-md transform transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-lg">
+          <img src="assets/jacket.jpg" alt="Jacket" class="object-cover h-40 w-auto">
+          <h2 class="text-lg font-semibold mt-2">Best Seller Product 2</h2>
+          <p class="text-gray-600">$299.99</p>
+        </div>
+        <div href="#" class="flex-none w-80 h-64 bg-white flex flex-col items-center justify-center p-2 rounded-lg shadow-md transform transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-lg">
+          <img src="assets/gloves.jpg" alt="Gloves" class="object-cover h-40 w-auto">
+          <h2 class="text-lg font-semibold mt-2">Best Seller Product 3</h2>
+          <p class="text-gray-600">$149.99</p>
+        </div>
+        <div href="#" class="flex-none w-80 h-64 bg-white flex flex-col items-center justify-center p-2 rounded-lg shadow-md transform transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-lg">
+          <img src="assets/boots.jpg" alt="Boots" class="object-cover h-40 w-auto">
+          <h2 class="text-lg font-semibold mt-2">Best Seller Product 4</h2>
+          <p class="text-gray-600">$199.99</p>
+        </div>
+      </div>
+  </section>
+      <!-- Right Arrow Button -->
+      <button id="scrollRight2" class="absolute top-1/2 right-2 transform -translate-y-1/2 text-black rounded-full">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-10 h-10 transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-lg hover:text-white hover:bg-gray-600 rounded-full">
+          <path fill-rule="evenodd" d="M16.28 11.47a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 0 1-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 0 1 1.06-1.06l7.5 7.5Z" clip-rule="evenodd" />
+        </svg>
+      </button>
+    </div>
+  <!-- Best Sellers Section Ends -->
+  
+  <!-- Contact Us Section -->
+  <section id="contact" class="bg-black text-white py-20">
+    <div class="container mx-auto text-center">
+      <h2 class="text-4xl font-semibold mb-10">Contact Us</h2>
+      <div class="flex flex-col md:flex-row justify-center">
+        <div class="md:w-1/3 px-4 mb-8 md:mb-0">
+          <h3 class="text-xl font-semibold mb-4">Our Office</h3>
+          <p class="text-gray-400">123 Moto Street, Cityname, Country</p>
+        </div>
+        <div class="md:w-1/3 px-4 mb-8 md:mb-0">
+          <h3 class="text-xl font-semibold mb-4">Email Us</h3>
+          <p class="text-gray-400">contact@royalmoto.com</p>
+        </div>
+        <div class="md:w-1/3 px-4">
+          <h3 class="text-xl font-semibold mb-4">Call Us</h3>
+          <p class="text-gray-400">+1 (234) 567-890</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- Footer Section -->
+<footer class="bg-gray-900 text-white py-8">
+  <div class="container mx-auto text-center">
+    <p class="text-sm">&copy; 2023 Royal Moto. All rights reserved.</p>
+  </div>
+</footer>
+
+  <script>
+    const scrollLeftBtn = document.getElementById('scrollLeft');
+    const scrollRightBtn = document.getElementById('scrollRight');
+    const scrollContainer = document.querySelector('.flex');
+
+    scrollLeftBtn.addEventListener('click', () => {
+      scrollContainer.scrollBy({
+        left: -200,
+        behavior: 'smooth'
+      });
+    });
+
+    scrollRightBtn.addEventListener('click', () => {
+      scrollContainer.scrollBy({
+        left: 200,
+        behavior: 'smooth'
+      });
+    });
+
+    const scrollLeftBtn2 = document.getElementById('scrollLeft2');
+    const scrollRightBtn2 = document.getElementById('scrollRight2');
+    const scrollContainer2 = document.querySelector('.flex');
+
+    scrollLeftBtn2.addEventListener('click', () => {
+      scrollContainer2.scrollBy({
+        left: -200,
+        behavior: 'smooth'
+      });
+    });
+
+    scrollRightBtn2.addEventListener('click', () => {
+      scrollContainer2.scrollBy({
+        left: 200,
+        behavior: 'smooth'
+      });
+    });
+  </script>
+
+</body>
+</html>
